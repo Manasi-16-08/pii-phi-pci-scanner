@@ -2,7 +2,7 @@
 Prerequisites
 Ensure you have the following installed:
 
-Python (version X.X.X or above)
+Python 
 Download from python.org.
 Virtual Environment Tool (optional but recommended):
 Install using pip install virtualenv.
