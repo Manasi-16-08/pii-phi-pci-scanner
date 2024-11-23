@@ -11,8 +11,8 @@ Clone the Repository
 Clone the repository to your local machine:
 
 bash
-git clone <repository-url>
-cd <project-folder>
+git clone https://github.com/Manasi-16-08/PII_PHI_PCI_Scanner.git
+cd PII_PHI_PCI_Scanner
 Create a Virtual Environment
 It’s a good practice to create an isolated Python environment for the project:
 
