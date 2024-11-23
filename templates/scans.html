@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Scan Results</title>
+</head>
+
+<body>
+    <h1>Scan Results</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>File Name</th>
+            <th>Timestamp</th>
+            <th>Data Found</th>
+            <th>Data Type</th>
+            <th>Actions</th>
+        </tr>
+        {% for scan in scans %}
+        <tr>
+            <td>{{ scan.id }}</td>
+            <td>{{ scan.file_name }}</td>
+            <td>{{ scan.scan_timestamp }}</td>
+            <td>{{ scan.found_data }}</td>
+            <td>{{ scan.data_type }}</td>
+            <td>
+                <form action="/delete/{{ scan.id }}" method="post">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

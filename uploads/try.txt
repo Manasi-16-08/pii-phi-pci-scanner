@@ -1,0 +1,8 @@
+John Doe
+PAN: ABCDE1234F
+SSN: 123-45-6789
+Medical Record Number: MR123456789
+Medical Test Result: Positive for COVID-19
+Health Insurance Policy: HI-987654321
+Credit Card: 4111-1111-1111-1111
+Address: 1234 Elm Street, Springfield
