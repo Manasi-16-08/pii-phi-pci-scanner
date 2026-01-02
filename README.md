@@ -1,118 +1,143 @@
-"# PII PHI PCI Scanner" 
+# pii-phi-pci-scanner
 
-Prerequisites
+The **pii-phi-pci-scanner** is a Python‑based tool designed to identify sensitive information in files and data sources. It scans for **Personally Identifiable Information (PII)**, **Protected Health Information (PHI)**, and **Payment Card Information (PCI)** to help developers, auditors, and security professionals detect and audit potentially sensitive data. This can be useful for data compliance, risk assessment, and privacy protection in applications and data workflows.
 
-Ensure you have the following installed:
+---
+
+## Project Overview
+
+This project provides a flexible scanning framework that can be extended or configured to match patterns for PII, PHI, and PCI. The scanner can work with textual data or file inputs and outputs results that help track sensitive data exposure for remediation.
+
+Sensitive data scanning is a critical component of data privacy and security processes, especially for regulated environments handling health, payment, or identity data. :contentReference[oaicite:1]{index=1}
+
+---
+
+## Features
+
+- Detects **PII patterns** such as names, emails, and phone numbers  
+- Identifies **PHI** entries that may contain personal health information  
+- Finds **PCI data** such as credit card numbers  
+- Modular architecture for adding custom detectors  
+- Can be integrated into automated pipelines or CLI workflows  
+- Suitable for testing and compliance scanning
+
+---
+
+## Technology Stack
+
+| Component | Technology |
+|-----------|------------|
+| Language | Python |
+| Pattern Detection | Regular Expressions (+ optional NLP models) |
+| Deployment | Docker (optional) |
+| Output | Console or structured reporting |
+
+---
+
+## Project Structure
+
+pii-phi-pci-scanner/
+├── app.py # Main application entry point
+├── scanner.py # Core scanning logic and pattern detection
+├── database.py # Optional database handling
+├── requirements.txt # Project Python dependencies
+├── Dockerfile # Docker container configuration
+├── docker-compose.yml # Docker Compose setup
+├── templates/ # HTML templates (if web UI implemented)
+├── static/ # Static assets (CSS/JS/images)
+├── uploads/ # Uploaded files for scanning
+├── tests/ # Unit or integration tests
+└── README.md # Project documentation
 
 
-Python 
-Download from python.org.
+---
 
+## Getting Started
 
-Virtual Environment Tool (optional but recommended):
-Install using pip install virtualenv.
+### Prerequisites
 
-Setup Instructions
+Before running the project, ensure you have the following installed:
 
-Clone the Repository
+- Python 3.8+  
+- `pip` (Python package manager)  
+- Docker and Docker Compose (optional but recommended for deployment)
 
-Clone the repository to your local machine:
+---
 
-bash
-git clone https://github.com/Manasi-16-08/PII_PHI_PCI_Scanner.git
+## Installation
 
-cd PII_PHI_PCI_Scanner
+1. **Clone the repository:**
 
-Create a Virtual Environment
+```bash
+git clone https://github.com/Manasi-16-08/pii-phi-pci-scanner.git
+cd pii-phi-pci-scanner
+```
 
-It’s a good practice to create an isolated Python environment for the project:
-
-bash
-
-python -m venv env
-
-Activate the virtual environment:
-
-Windows:
-
-bash
-
-.\env\Scripts\activate
-
-macOS/Linux:
-
-bash
-
-source env/bin/activate
-
-Install Dependencies
-
-Install the required Python packages:
-
-
-bash
-
+2. **Install Python dependencies:**
+```bash
 pip install -r requirements.txt
+```
 
-Apply Migrations (if using a database)
+---
 
-Run the following commands to set up the database:
+## Running the Scanner (Local)
 
-
-bash
-
-python manage.py db upgrade
-
-Run the Application
-
-Start the application with the following command:
-
-
-bash
-
+To run the application locally:
+```bash
 python app.py
+```
 
-The application should now be accessible at http://localhost:5000 (or the port specified in your code).
+This typically starts the application, which can be interfaced with via an API or CLI depending on the implementation.
 
+---
 
-Configuration
+### Using Docker (Optional)
 
-Environment Variables
+To run the application in a containerized environment:
+```bash
+docker-compose up --build
+```
 
-Configure environment variables in the .env file (if applicable). 
+This will build the Docker image and start all required services.
 
-Example:
+---
 
-FLASK_ENV=development
+### Usage Examples
 
-DATABASE_URI=sqlite:///app.db
+Once the scanner is running:
 
-SECRET_KEY=your-secret-key
+-Provide file paths or text input to scan for sensitive data
 
-Updating Database
+-Review the console or generated reports for detected PII/PHI/PCI results
 
-If you’ve made changes to your models:
+-Extend or customize detection patterns as needed.
 
+---
 
-Generate a new migration:
+### Running Tests
 
+If the repository includes tests, you can run them with:
 
-bash
+```bash
+pytest
+```
 
-python manage.py db migrate -m "migration message"
+Make sure pytest is installed and configured in your environment.
 
-Apply the migration:
+### Contributions
 
+-Contributions are welcome. To contribute:
 
-bash
+-Fork this repository.
 
-python manage.py db upgrade
+-Create a new feature branch.
 
-Troubleshooting
+-Make your changes and commit them with clear messages.
 
-Common Issues
+-Submit a Pull Request for review.
 
-Dependency Errors: Ensure all dependencies are installed with pip install -r requirements.txt.
+### Author
 
+Manasi Tawade
 
-Port Already in Use: Change the port in your code, e.g., app.run(port=5001).
+GitHub: https://github.com/Manasi-16-08
