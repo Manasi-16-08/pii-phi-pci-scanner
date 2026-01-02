@@ -35,7 +35,7 @@ Sensitive data scanning is a critical component of data privacy and security pro
 ---
 
 ## Project Structure
-
+```
 pii-phi-pci-scanner/
 ├── app.py # Main application entry point
 ├── scanner.py # Core scanning logic and pattern detection
@@ -48,7 +48,7 @@ pii-phi-pci-scanner/
 ├── uploads/ # Uploaded files for scanning
 ├── tests/ # Unit or integration tests
 └── README.md # Project documentation
-
+```
 
 ---
 
